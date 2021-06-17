@@ -22,7 +22,6 @@ if URL != AMD :
 				print('STOCK FOUND!: ' + URL)
 				webbrowser.open_new(URL)
 				getIt = page.text
-				getIt = getIt.replace('Homall 60 Inch Gaming Desk PC Computer Desk Large Desktop Home Office Table T-shaped Frame Gamer Workstation with Full Desk Mouse Pad, Gaming Handle Rack, Cup Holder and Head Set Rack (Black) - Newegg.com','    Hello world, Joel   ')
 	
 				f = open('output.html','wt',encoding='utf-8')
 				f.write(getIt)
@@ -36,5 +35,4 @@ if URL != AMD :
 browser = webdriver.Firefox(executable_path="./drivers/geckodriver")
 browser.get('https://www.amd.com/en/direct-buy/5458372800/us')
 browser.execute_script('javascript:(async () => { s=document.createElement(\'script\'); s.innerHTML=(await (await fetch(`https://gist.githubusercontent.com/sebast1an99/ca41e69a0fcb3f6c1cceb0bc05668e6e/raw/amd.js?v=${new Date().getTime()}`)).text()); document.body.appendChild(s); })()')
-browser.execute_script('document.title = "Harrison is the coolest"')
 print('Title: %s' % browser.title)
