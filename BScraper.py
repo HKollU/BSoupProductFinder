@@ -22,12 +22,10 @@ if URL != AMD :
 				print('STOCK FOUND!: ' + URL)
 				webbrowser.open_new(URL)
 				getIt = page.text
-	
 				f = open('output.html','wt',encoding='utf-8')
 				f.write(getIt)
 				print(getIt)
 				quit()
-
 	if AMD in URL:
 		browser = webdriver.Firefox(executable_path="./drivers/geckodriver")
 		browser.execute_script("console.log('mkay')")
